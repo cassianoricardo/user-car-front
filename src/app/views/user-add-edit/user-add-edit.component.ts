@@ -46,7 +46,7 @@ export class UserAddEditComponent implements OnInit {
               this._dialogRef.close(true);
             },
             error: (err: any) => {
-              console.error(err);
+              this._coreService.openSnackBar(err);
             },
           });
       } else {
@@ -56,7 +56,7 @@ export class UserAddEditComponent implements OnInit {
             this._dialogRef.close(true);
           },
           error: (err: any) => {
-            console.error(err);
+            this._coreService.openSnackBar(err.error.message);
           },
         });
       }
