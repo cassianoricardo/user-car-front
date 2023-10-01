@@ -1,30 +1,14 @@
-import { Component, Inject, OnInit,  } from '@angular/core';
+import { Component, Inject, OnInit  } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { CoreService } from '../../core/core.service';
-import { MAT_DATE_FORMATS } from '@angular/material/core';
 import { UserService } from '../../shared/service/user.service';
-
-export const MY_DATE_FORMATS = {
-    parse: {
-      dateInput: 'DD/MM/YYYY',
-    },
-    display: {
-      dateInput: 'DD/MM/YYYY',
-      monthYearLabel: 'MMMM YYYY',
-      dateA11yLabel: 'LL',
-      monthYearA11yLabel: 'MMMM YYYY'
-    },
-};
-
 
 @Component({
   selector: 'app-user-add-edit',
   templateUrl: './user-add-edit.component.html',
   styleUrls: ['./user-add-edit.component.scss'],
-  providers: [
-    { provide: MAT_DATE_FORMATS, useValue: MY_DATE_FORMATS }
-]
+
 })
 export class UserAddEditComponent implements OnInit {
   userForm: FormGroup;
