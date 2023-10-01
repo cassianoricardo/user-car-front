@@ -6,8 +6,8 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 
-import { UserService } from 'src/shared/service/user.service';
 import { CoreService } from 'src/app/core/core.service';
+import { UserService } from 'src/app/shared/service/user.service';
 
 @Component({
   selector: 'app-tab-user',

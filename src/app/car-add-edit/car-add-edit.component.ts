@@ -1,8 +1,8 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { CarService } from 'src/shared/service/car.service';
 import { CoreService } from '../core/core.service';
+import { CarService } from '../shared/service/car.service';
 
 @Component({
   selector: 'app-car-add-edit',
@@ -12,14 +12,6 @@ import { CoreService } from '../core/core.service';
 export class CarAddEditComponent implements OnInit {
   carForm: FormGroup;
 
-  education: string[] = [
-    'Matric',
-    'Diploma',
-    'Intermediate',
-    'Graduate',
-    'Post Graduate',
-  ];
-
   constructor(
     private _fb: FormBuilder,
     private _carService: CarService,
@@ -28,12 +20,10 @@ export class CarAddEditComponent implements OnInit {
     private _coreService: CoreService
   ) {
     this.carForm = this._fb.group({
-      firstName: '',
-      lastName: '',
-      email: '',
-      birtday: '',
-      login: '',
-      phone: ''
+      model: '',
+      year: '',
+      licensePlate: '',
+      color: ''
     });
   }
 

@@ -32,6 +32,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatSortModule } from '@angular/material/sort';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { AuthenticatorComponent } from './views/authenticator/authenticator.component';
+import { httpInterceptorProviders } from './http-interceptors';
+
 
 
 @NgModule({
@@ -69,7 +71,7 @@ import { AuthenticatorComponent } from './views/authenticator/authenticator.comp
     MatSortModule,
     MatSnackBarModule
   ],
-  providers: [],
+  providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { 
