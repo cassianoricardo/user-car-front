@@ -1,8 +1,8 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { CoreService } from '../core/core.service';
-import { CarService } from '../shared/service/car.service';
+import { CoreService } from '../../core/core.service';
+import { CarService } from '../../shared/service/car.service';
 
 @Component({
   selector: 'app-car-add-edit',

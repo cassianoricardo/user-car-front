@@ -32,12 +32,18 @@
         <div class="row">
             <mat-form-field appearance="outline">
                 <mat-label>Login</mat-label>
-                <input matInput placeholder="Ex. Google" formControlName="login">
+                <input matInput formControlName="login">
             </mat-form-field>
 
+            <mat-form-field appearance="outline" *ngIf="!data">
+                <mat-label>Password</mat-label>
+                <input matInput type="password" formControlName="password">
+            </mat-form-field>
+        </div>
+        <div class="row">
             <mat-form-field appearance="outline">
                 <mat-label>Phone</mat-label>
-                <input matInput placeholder="Ex. Google" formControlName="phone">
+                <input matInput formControlName="phone">
             </mat-form-field>
         </div>
 

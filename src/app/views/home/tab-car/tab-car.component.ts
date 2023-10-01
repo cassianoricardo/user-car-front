@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { CarAddEditComponent } from 'src/app/car-add-edit/car-add-edit.component';
+import { CarAddEditComponent } from 'src/app/views/car-add-edit/car-add-edit.component';
 
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';

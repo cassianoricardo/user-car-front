@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { UserAddEditComponent } from 'src/app/user-add-edit/user-add-edit.component';
+import { UserAddEditComponent } from 'src/app/views/user-add-edit/user-add-edit.component';
 
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
