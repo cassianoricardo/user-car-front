@@ -1,0 +1,22 @@
+<div class="authentication">
+    <div mat-dialog-title>
+        <h1>Entrar</h1>
+    </div>
+    <form [formGroup]="authenticatorForm" (ngSubmit)="onSubmit()">
+
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Login</mat-label>
+                <input matInput type="text" formControlName="login">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Password</mat-label>
+                <input matInput type="password" formControlName="password">
+            </mat-form-field>
+        </div>
+        <div mat-dialog-actions class="action">
+            <button type="submit" class="btn btn-primary btn-block" [disabled]="authenticatorForm.invalid">Entrar</button>
+            <button type="button" class="btn btn-link btn-block" [routerLink]="['/create-account']">Criar conta</button>
+        </div>
+    </form>
+</div>

@@ -31,6 +31,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { HttpClientModule } from '@angular/common/http';
 import { MatSortModule } from '@angular/material/sort';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { AuthenticatorComponent } from './views/authenticator/authenticator.component';
+
 
 @NgModule({
   declarations: [
@@ -40,7 +42,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     TabCarComponent,
     TabUserComponent,
     CarAddEditComponent, 
-    UserAddEditComponent
+    UserAddEditComponent, 
+    AuthenticatorComponent
   ],
   imports: [
     BrowserModule,
