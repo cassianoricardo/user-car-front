@@ -2,6 +2,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import jwt_decode from "jwt-decode";
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
   async login(authenticator: any) {
-    const result = await this.http.post<any>(`http://localhost:8081/api/auth/signin`, authenticator).toPromise();
+    const result = await this.http.post<any>(`${environment.api}/auth/signin`, authenticator).toPromise();
     if (result && result.token) {
       window.localStorage.setItem('token', result.token);
       return true;
