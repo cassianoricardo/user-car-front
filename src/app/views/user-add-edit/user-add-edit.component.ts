@@ -42,7 +42,7 @@ export class UserAddEditComponent implements OnInit {
           .updateUser(this.data.id, this.userForm.value)
           .subscribe({
             next: (val: any) => {
-              this.coreService.openSnackBar('User detail updated!');
+              this.coreService.openSnackBar('User updated!');
               this.dialogRef.close(true);
             },
             error: (err: any) => {
