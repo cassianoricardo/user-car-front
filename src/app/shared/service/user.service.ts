@@ -7,21 +7,21 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root',
 })
 export class UserService {
-  constructor(private _http: HttpClient) {}
+  constructor(private http: HttpClient) {}
 
   addUser(data: any): Observable<any> {
-    return this._http.post(`${environment.api}/users`, data);
+    return this.http.post(`${environment.api}/users`, data);
   }
 
   updateUser(id: number, data: any): Observable<any> {
-    return this._http.put(`${environment.api}/users/${id}`, data);
+    return this.http.put(`${environment.api}/users/${id}`, data);
   }
 
   getUserList(): Observable<any> {
-    return this._http.get(`${environment.api}/users`);
+    return this.http.get(`${environment.api}/users`);
   }
 
   deleteUser(id: number): Observable<any> {
-    return this._http.delete(`${environment.api}/users/${id}`);
+    return this.http.delete(`${environment.api}/users/${id}`);
   }
 }

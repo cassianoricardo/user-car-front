@@ -14,13 +14,13 @@ export class UserAddEditComponent implements OnInit {
   userForm: FormGroup;
 
   constructor(
-    private _fb: FormBuilder,
-    private _userService: UserService,
-    private _dialogRef: MatDialogRef<UserAddEditComponent>,
+    private fb: FormBuilder,
+    private userService: UserService,
+    private dialogRef: MatDialogRef<UserAddEditComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
-    private _coreService: CoreService
+    private coreService: CoreService
   ) {
-    this.userForm = this._fb.group({
+    this.userForm = this.fb.group({
       firstName: '',
       lastName: '',
       email: '',
@@ -38,25 +38,25 @@ export class UserAddEditComponent implements OnInit {
   onFormSubmit() {
     if (this.userForm.valid) {
       if (this.data) {
-        this._userService
+        this.userService
           .updateUser(this.data.id, this.userForm.value)
           .subscribe({
             next: (val: any) => {
-              this._coreService.openSnackBar('User detail updated!');
-              this._dialogRef.close(true);
+              this.coreService.openSnackBar('User detail updated!');
+              this.dialogRef.close(true);
             },
             error: (err: any) => {
-              this._coreService.openSnackBar(err);
+              this.coreService.openSnackBar(err);
             },
           });
       } else {
-        this._userService.addUser(this.userForm.value).subscribe({
+        this.userService.addUser(this.userForm.value).subscribe({
           next: (val: any) => {
-            this._coreService.openSnackBar('User added successfully');
-            this._dialogRef.close(true);
+            this.coreService.openSnackBar('User added successfully');
+            this.dialogRef.close(true);
           },
           error: (err: any) => {
-            this._coreService.openSnackBar(err.error.message);
+            this.coreService.openSnackBar(err.error.message);
           },
         });
       }

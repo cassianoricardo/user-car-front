@@ -13,13 +13,13 @@ export class CarAddEditComponent implements OnInit {
   carForm: FormGroup;
 
   constructor(
-    private _fb: FormBuilder,
-    private _carService: CarService,
-    private _dialogRef: MatDialogRef<CarAddEditComponent>,
+    private fb: FormBuilder,
+    private carService: CarService,
+    private dialogRef: MatDialogRef<CarAddEditComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
-    private _coreService: CoreService
+    private coreService: CoreService
   ) {
-    this.carForm = this._fb.group({
+    this.carForm = this.fb.group({
       model: '',
       year: '',
       licensePlate: '',
@@ -34,22 +34,22 @@ export class CarAddEditComponent implements OnInit {
   onFormSubmit() {
     if (this.carForm.valid) {
       if (this.data) {
-        this._carService
+        this.carService
           .updateCar(this.data.id, this.carForm.value)
           .subscribe({
             next: (val: any) => {
-              this._coreService.openSnackBar('Car detail updated!');
-              this._dialogRef.close(true);
+              this.coreService.openSnackBar('Car detail updated!');
+              this.dialogRef.close(true);
             },
             error: (err: any) => {
               console.error(err);
             },
           });
       } else {
-        this._carService.addCar(this.carForm.value).subscribe({
+        this.carService.addCar(this.carForm.value).subscribe({
           next: (val: any) => {
-            this._coreService.openSnackBar('Car added successfully');
-            this._dialogRef.close(true);
+            this.coreService.openSnackBar('Car added successfully');
+            this.dialogRef.close(true);
           },
           error: (err: any) => {
             console.error(err);

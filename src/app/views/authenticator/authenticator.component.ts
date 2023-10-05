@@ -12,11 +12,11 @@ export class AuthenticatorComponent implements OnInit {
   authenticatorForm: FormGroup;
 
   constructor(
-    private _fb: FormBuilder,
+    private fb: FormBuilder,
     private authService: AuthService,
     private router: Router
   ) {
-    this.authenticatorForm = this._fb.group({
+    this.authenticatorForm = this.fb.group({
       login: '',
       password: ''
     });
