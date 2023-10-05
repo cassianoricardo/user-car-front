@@ -35,8 +35,15 @@
           <th mat-header-cell *matHeaderCellDef mat-sort-header> LicensePlate </th>
           <td mat-cell *matCellDef="let row"> {{row.licensePlate}}</td>
         </ng-container>
+
+        <ng-container matColumnDef="photo">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Photo </th>
+          <td mat-cell *matCellDef="let row"> 
+            <img src="{{row.photo !==null ? 'data:image/jpg;base64,'+ row.photo : '/assets/images/car-default.png'}}" height="75px" width="75px"/>
+          </td>
+        </ng-container>
   
-          <ng-container matColumnDef="action">
+        <ng-container matColumnDef="action">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
           <td mat-cell *matCellDef="let row">
             <button mat-icon-button color="primary" (click)="openEditForm(row)">

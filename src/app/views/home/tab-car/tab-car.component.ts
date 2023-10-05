@@ -22,7 +22,8 @@ export class TabCarComponent {
     'color',
     'year',
     'licensePlate',
-    'action',
+    'photo',
+    'action'
   ];
   dataSource!: MatTableDataSource<any>;
 

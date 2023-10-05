@@ -35,6 +35,7 @@ import { AuthenticatorComponent } from './views/authenticator/authenticator.comp
 import { httpInterceptorProviders } from './http-interceptors';
 import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
 import { MomentDateAdapter } from '@angular/material-moment-adapter';
+import {MatCardModule} from '@angular/material/card';
 
 const MY_DATE_FORMAT = {
   parse: {
@@ -81,7 +82,8 @@ const MY_DATE_FORMAT = {
     ReactiveFormsModule,
     HttpClientModule,
     MatSortModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatCardModule
   ],
   providers: [httpInterceptorProviders,
     { provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE] },

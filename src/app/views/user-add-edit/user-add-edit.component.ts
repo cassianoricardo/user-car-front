@@ -27,7 +27,7 @@ export class UserAddEditComponent implements OnInit {
       birtday: [new Date()],
       login: '',
       password: '',
-      phone: '',
+      phone: ''
     });
   }
 
